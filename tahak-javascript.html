@@ -74,7 +74,7 @@
 </ul>
 <h4 class="code-line" data-line-start=68 data-line-end=69 ><a id="7_Smyky_68"></a><strong>7. Smyčky</strong></h4>
 <ul>
-<li class="has-line-data" data-line-start="70" data-line-end="80">
+<li class="has-line-data" data-line-start="70" data-line-end="97">
 <p class="has-line-data" data-line-start="70" data-line-end="71"><strong>for</strong>: Opakuje kód po určitý počet opakování.</p>
 <pre><code class="has-line-data" data-line-start="73" data-line-end="78" class="language-javascript"><span class="hljs-keyword">let</span> text = <span class="hljs-string">""</span>;
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
@@ -82,41 +82,57 @@
 }
 </code></pre>
 <p class="has-line-data" data-line-start="78" data-line-end="79">Hodnota proměnné <code>text</code> po provedení cyklu <code>for</code>: <code>0 1 2 3 4</code></p>
+<pre><code class="has-line-data" data-line-start="80" data-line-end="96" class="language-javascript">  <span class="hljs-keyword">const</span> vstup = <span class="hljs-string">"12345"</span>;
+  <span class="hljs-keyword">let</span> soucet = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> ch <span class="hljs-keyword">of</span> vstup) {
+      soucet = soucet + <span class="hljs-built_in">Number</span>(ch);
+  }
+  <span class="hljs-comment">// druhá varianta</span>
+  <span class="hljs-keyword">let</span> soucet = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> vstup) {
+      soucet += <span class="hljs-built_in">Number</span>(vstup[key]);
+  }
+  <span class="hljs-comment">// třetí varianta</span>
+  <span class="hljs-keyword">let</span> soucet = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; vstup.length; i++) {
+      soucet += <span class="hljs-built_in">Number</span>(vstup[i]);
+  }
+</code></pre>
 </li>
-<li class="has-line-data" data-line-start="80" data-line-end="92">
-<p class="has-line-data" data-line-start="80" data-line-end="81"><strong>while</strong>: Opakuje kód, dokud je podmínka pravdivá.</p>
-<pre><code class="has-line-data" data-line-start="83" data-line-end="90" class="language-javascript"><span class="hljs-keyword">let</span> text = <span class="hljs-string">""</span>;
+<li class="has-line-data" data-line-start="97" data-line-end="109">
+<p class="has-line-data" data-line-start="97" data-line-end="98"><strong>while</strong>: Opakuje kód, dokud je podmínka pravdivá.</p>
+<pre><code class="has-line-data" data-line-start="100" data-line-end="107" class="language-javascript"><span class="hljs-keyword">let</span> text = <span class="hljs-string">""</span>;
 <span class="hljs-keyword">let</span> i = <span class="hljs-number">4</span>;
 <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span>) {
   text += i + <span class="hljs-string">" "</span>;
   i--;
 }
 </code></pre>
-<p class="has-line-data" data-line-start="90" data-line-end="91">Hodnota proměnné <code>text</code> po provedení cyklu <code>while</code>: <code>4 3 2 1 0</code></p>
+<p class="has-line-data" data-line-start="107" data-line-end="108">Hodnota proměnné <code>text</code> po provedení cyklu <code>while</code>: <code>4 3 2 1 0</code></p>
 </li>
 </ul>
-<h4 class="code-line" data-line-start=92 data-line-end=93 ><a id="8_Funkce_92"></a><strong>8. Funkce</strong></h4>
+<h4 class="code-line" data-line-start=109 data-line-end=110 ><a id="8_Funkce_109"></a><strong>8. Funkce</strong></h4>
 <ul>
-<li class="has-line-data" data-line-start="94" data-line-end="104">
-<p class="has-line-data" data-line-start="94" data-line-end="95">Funkce je blok kódu, který lze opakovaně použít.</p>
-<pre><code class="has-line-data" data-line-start="97" data-line-end="103" class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pozdrav</span>(<span class="hljs-params">jmeno</span>) </span>{
+<li class="has-line-data" data-line-start="111" data-line-end="121">
+<p class="has-line-data" data-line-start="111" data-line-end="112">Funkce je blok kódu, který lze opakovaně použít.</p>
+<pre><code class="has-line-data" data-line-start="114" data-line-end="120" class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pozdrav</span>(<span class="hljs-params">jmeno</span>) </span>{
   <span class="hljs-keyword">return</span> <span class="hljs-string">"Ahoj, "</span> + jmeno + <span class="hljs-string">"!"</span>;
 }
 
 alert(pozdrav(<span class="hljs-string">"Marie"</span>));
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="104" data-line-end="110">
-<p class="has-line-data" data-line-start="104" data-line-end="105"><strong>Anonymní a šipková funkce (Arrow Function)</strong></p>
-<pre><code class="has-line-data" data-line-start="107" data-line-end="109" class="language-javascript"><span class="hljs-keyword">const</span> pozdrav = (jmeno) =&gt; <span class="hljs-string">"Ahoj, "</span> + jmeno + <span class="hljs-string">"!"</span>;
+<li class="has-line-data" data-line-start="121" data-line-end="127">
+<p class="has-line-data" data-line-start="121" data-line-end="122"><strong>Anonymní a šipková funkce (Arrow Function)</strong></p>
+<pre><code class="has-line-data" data-line-start="124" data-line-end="126" class="language-javascript"><span class="hljs-keyword">const</span> pozdrav = (jmeno) =&gt; <span class="hljs-string">"Ahoj, "</span> + jmeno + <span class="hljs-string">"!"</span>;
 </code></pre>
 </li>
 </ul>
-<h4 class="code-line" data-line-start=110 data-line-end=111 ><a id="9_Prce_s_DOM_Document_Object_Model_110"></a><strong>9. Práce s DOM (Document Object Model)</strong></h4>
+<h4 class="code-line" data-line-start=127 data-line-end=128 ><a id="9_Prce_s_DOM_Document_Object_Model_127"></a><strong>9. Práce s DOM (Document Object Model)</strong></h4>
 <ul>
-<li class="has-line-data" data-line-start="112" data-line-end="124">
-<p class="has-line-data" data-line-start="112" data-line-end="113">DOM umožňuje přistupovat a měnit obsah HTML stránky pomocí JavaScriptu.</p>
-<pre><code class="has-line-data" data-line-start="115" data-line-end="123" class="language-javascript"><span class="hljs-comment">// Výběr elementu podle ID</span>
+<li class="has-line-data" data-line-start="129" data-line-end="141">
+<p class="has-line-data" data-line-start="129" data-line-end="130">DOM umožňuje přistupovat a měnit obsah HTML stránky pomocí JavaScriptu.</p>
+<pre><code class="has-line-data" data-line-start="132" data-line-end="140" class="language-javascript"><span class="hljs-comment">// Výběr elementu podle ID</span>
 <span class="hljs-keyword">let</span> nadpis = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"nadpis"</span>);
 nadpis.textContent = <span class="hljs-string">"Nový text"</span>;
 
@@ -126,52 +142,52 @@ paragrafy[<span class="hljs-number">0</span>].style.color = <span class="hljs-st
 </code></pre>
 </li>
 </ul>
-<h4 class="code-line" data-line-start=124 data-line-end=125 ><a id="10_Udlosti_124"></a><strong>10. Události</strong></h4>
+<h4 class="code-line" data-line-start=141 data-line-end=142 ><a id="10_Udlosti_141"></a><strong>10. Události</strong></h4>
 <ul>
-<li class="has-line-data" data-line-start="126" data-line-end="134">
-<p class="has-line-data" data-line-start="126" data-line-end="127">Události reagují na akce uživatele, jako je kliknutí nebo pohyb myší.</p>
-<pre><code class="has-line-data" data-line-start="129" data-line-end="133" class="language-javascript"><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"tlacitko"</span>).addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<li class="has-line-data" data-line-start="143" data-line-end="151">
+<p class="has-line-data" data-line-start="143" data-line-end="144">Události reagují na akce uživatele, jako je kliknutí nebo pohyb myší.</p>
+<pre><code class="has-line-data" data-line-start="146" data-line-end="150" class="language-javascript"><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"tlacitko"</span>).addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
   alert(<span class="hljs-string">"Tlačítko bylo stisknuto!"</span>);
 });
 </code></pre>
 </li>
 </ul>
-<h4 class="code-line" data-line-start=134 data-line-end=135 ><a id="11_Console_134"></a><strong>11. Console</strong></h4>
+<h4 class="code-line" data-line-start=151 data-line-end=152 ><a id="11_Console_151"></a><strong>11. Console</strong></h4>
 <ul>
-<li class="has-line-data" data-line-start="136" data-line-end="142">
-<p class="has-line-data" data-line-start="136" data-line-end="137"><code>console.log()</code> se používá pro zobrazení zpráv v konzoli, což je užitečné pro ladění kódu.</p>
-<pre><code class="has-line-data" data-line-start="139" data-line-end="141" class="language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Zpráva pro ladění"</span>);
+<li class="has-line-data" data-line-start="153" data-line-end="159">
+<p class="has-line-data" data-line-start="153" data-line-end="154"><code>console.log()</code> se používá pro zobrazení zpráv v konzoli, což je užitečné pro ladění kódu.</p>
+<pre><code class="has-line-data" data-line-start="156" data-line-end="158" class="language-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Zpráva pro ladění"</span>);
 </code></pre>
 </li>
 </ul>
-<h4 class="code-line" data-line-start=142 data-line-end=143 ><a id="12_ast_vestavn_metody_142"></a><strong>12. Časté vestavěné metody</strong></h4>
+<h4 class="code-line" data-line-start=159 data-line-end=160 ><a id="12_ast_vestavn_metody_159"></a><strong>12. Časté vestavěné metody</strong></h4>
 <ul>
-<li class="has-line-data" data-line-start="144" data-line-end="151">
-<p class="has-line-data" data-line-start="144" data-line-end="145"><strong>String</strong> metody: <code>toUpperCase()</code>, <code>toLowerCase()</code>, <code>includes()</code>, <code>slice()</code>, <code>split()</code></p>
-<pre><code class="has-line-data" data-line-start="147" data-line-end="150" class="language-javascript"><span class="hljs-keyword">let</span> text = <span class="hljs-string">"Ahoj světe!"</span>;
+<li class="has-line-data" data-line-start="161" data-line-end="168">
+<p class="has-line-data" data-line-start="161" data-line-end="162"><strong>String</strong> metody: <code>toUpperCase()</code>, <code>toLowerCase()</code>, <code>includes()</code>, <code>slice()</code>, <code>split()</code></p>
+<pre><code class="has-line-data" data-line-start="164" data-line-end="167" class="language-javascript"><span class="hljs-keyword">let</span> text = <span class="hljs-string">"Ahoj světe!"</span>;
 <span class="hljs-built_in">console</span>.log(text.toUpperCase());
 </code></pre>
 </li>
-<li class="has-line-data" data-line-start="151" data-line-end="159">
-<p class="has-line-data" data-line-start="151" data-line-end="152"><strong>Array</strong> metody: <code>push()</code>, <code>pop()</code>, <code>shift()</code>, <code>unshift()</code>, <code>map()</code>, <code>filter()</code></p>
-<pre><code class="has-line-data" data-line-start="154" data-line-end="158" class="language-javascript"><span class="hljs-keyword">let</span> cisla = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<li class="has-line-data" data-line-start="168" data-line-end="176">
+<p class="has-line-data" data-line-start="168" data-line-end="169"><strong>Array</strong> metody: <code>push()</code>, <code>pop()</code>, <code>shift()</code>, <code>unshift()</code>, <code>map()</code>, <code>filter()</code></p>
+<pre><code class="has-line-data" data-line-start="171" data-line-end="175" class="language-javascript"><span class="hljs-keyword">let</span> cisla = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
 cisla.push(<span class="hljs-number">4</span>);  <span class="hljs-comment">// Přidá 4 na konec</span>
 <span class="hljs-built_in">console</span>.log(cisla);
 </code></pre>
 </li>
 </ul>
-<h4 class="code-line" data-line-start=159 data-line-end=160 ><a id="13_JSON_JavaScript_Object_Notation_159"></a><strong>13. JSON (JavaScript Object Notation)</strong></h4>
+<h4 class="code-line" data-line-start=176 data-line-end=177 ><a id="13_JSON_JavaScript_Object_Notation_176"></a><strong>13. JSON (JavaScript Object Notation)</strong></h4>
 <ul>
-<li class="has-line-data" data-line-start="161" data-line-end="169">
-<p class="has-line-data" data-line-start="161" data-line-end="162">JSON je formát pro výměnu dat, běžně používaný při práci s API.</p>
-<pre><code class="has-line-data" data-line-start="164" data-line-end="168" class="language-javascript"><span class="hljs-keyword">let</span> osoba = { jmeno: <span class="hljs-string">"Jan"</span>, vek: <span class="hljs-number">20</span> };
+<li class="has-line-data" data-line-start="178" data-line-end="186">
+<p class="has-line-data" data-line-start="178" data-line-end="179">JSON je formát pro výměnu dat, běžně používaný při práci s API.</p>
+<pre><code class="has-line-data" data-line-start="181" data-line-end="185" class="language-javascript"><span class="hljs-keyword">let</span> osoba = { jmeno: <span class="hljs-string">"Jan"</span>, vek: <span class="hljs-number">20</span> };
 <span class="hljs-keyword">let</span> osobaJSON = <span class="hljs-built_in">JSON</span>.stringify(osoba);  <span class="hljs-comment">// Převod na JSON</span>
 <span class="hljs-keyword">let</span> zpetnaOsoba = <span class="hljs-built_in">JSON</span>.parse(osobaJSON);  <span class="hljs-comment">// Zpětný převod na objekt</span>
 </code></pre>
 </li>
 </ul>
-<h4 class="code-line" data-line-start=169 data-line-end=170 ><a id="14_Pklad_JavaScript_kdu_169"></a><strong>14. Příklad JavaScript kódu</strong></h4>
-<pre><code class="has-line-data" data-line-start="172" data-line-end="178" class="language-javascript"><span class="hljs-comment">// Změna textu při kliknutí na tlačítko</span>
+<h4 class="code-line" data-line-start=186 data-line-end=187 ><a id="14_Pklad_JavaScript_kdu_186"></a><strong>14. Příklad JavaScript kódu</strong></h4>
+<pre><code class="has-line-data" data-line-start="189" data-line-end="195" class="language-javascript"><span class="hljs-comment">// Změna textu při kliknutí na tlačítko</span>
 <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"zmenText"</span>).addEventListener(<span class="hljs-string">"click"</span>, () =&gt; {
   <span class="hljs-keyword">let</span> nadpis = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"nadpis"</span>);
   nadpis.textContent = <span class="hljs-string">"Text byl změněn!"</span>;
